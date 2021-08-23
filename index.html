@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11_Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="main_div">
+        <div class="music_container">
+            <h2 id="title">PAL : [Slowed + Reverb]</h2>
+            <h3 id="artist">Arijit Singh & Shreya Goshal</h3>
+            <div class="img_container " id="song_img">
+                <img src="./images/pal.jpg" alt="" id="music_img">
+            </div>
+            <audio src="./music/Pal.mp3" id="music_link"></audio>
+
+            <!-- Controls -->
+            <div class="music_controls">
+                <i class="fas fa-backward" id="prev_btn" title="Previous"></i>
+                <i class="fas fa-play main_button" id="play_btn" title="Play"></i>
+                <i class="fas fa-forward" id="next_btn" title="Next"></i>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+</html>
