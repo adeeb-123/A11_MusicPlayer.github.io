@@ -83,6 +83,7 @@ function loadsong(songs) {
     artist.textContent = songs.artist
     music_link.src = `./music/${songs.music}.mp3`
     music_img.src = `./images/${songs.image}`
+    download_btn.href = `./music/${songs.music}.mp3`
 }
 
 songindex = 0;
@@ -110,12 +111,12 @@ let total_duration = document.getElementById('duration')
 let current_time = document.getElementById('current_time')
 
 
-song.addEventListener('timeupdate',(event)=>{
+song.addEventListener('timeupdate', (event) => {
     // console.log(event)
-    const {currentTime , duration} = event.srcElement;
+    const { currentTime, duration } = event.srcElement;
     // console.log(`current time is ${currentTime}`)
     // console.log(`Duration time is ${duration}`)
-    
+
     let progress_time = (currentTime / duration) * 100;
     progress.style.width = `${progress_time}%`
 
@@ -128,7 +129,7 @@ song.addEventListener('timeupdate',(event)=>{
     // console.log(second_duration)
 
     let tot_duration = `${minute_duration}:${second_duration}`;
-    if(duration){
+    if (duration) {
 
         total_duration.textContent = `${tot_duration}`
     }
@@ -140,7 +141,7 @@ song.addEventListener('timeupdate',(event)=>{
     // console.log(minute_duration)
     // console.log(second_duration)
 
-    if(second_currentTime < 10){
+    if (second_currentTime < 10) {
         second_currentTime = `0${second_currentTime}`
     }
     let tot_currentTime = `${minute_currentTime}:${second_currentTime}`;
@@ -150,9 +151,9 @@ song.addEventListener('timeupdate',(event)=>{
 // whenever someone clicks on the progress bar song shoul starts from there
 const progress_div = document.getElementById('progress_div')
 
-progress_div.addEventListener('click' ,(event)=>{
+progress_div.addEventListener('click', (event) => {
     // console.log(event)
-    const {duration} = song;
+    const { duration } = song;
 
     let move_progress = (event.offsetX / event.srcElement.clientWidth) * duration;
     console.log(move_progress)
@@ -161,7 +162,14 @@ progress_div.addEventListener('click' ,(event)=>{
 })
 
 // ----------------------------> if music ends we want to play the next song ----------------------<
-song.addEventListener('ended',  nextsong); // song end apply the nextsong function
+song.addEventListener('ended', nextsong); // song end apply the nextsong function
 
 next_btn.addEventListener('click', nextsong);
 prev_btn.addEventListener('click', prevsong);
+
+// Downloading the song
+
+let download_btn = document.getElementById('download_btn')
+download_btn.addEventListener('click', () => {
+    console.log("Song is Downloading");
+})
