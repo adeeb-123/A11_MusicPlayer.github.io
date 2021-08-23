@@ -81,8 +81,8 @@ let songs = [
 function loadsong(songs) {
     title.textContent = songs.title
     artist.textContent = songs.artist
-    music_link.src = `../music/${songs.music}.mp3`
-    music_img.src = `../images/${songs.image}`
+    music_link.src = `./music/${songs.music}.mp3`
+    music_img.src = `./images/${songs.image}`
 }
 
 songindex = 0;
